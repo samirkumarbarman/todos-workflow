@@ -1,0 +1,33 @@
+name: Todos
+
+on: 
+  push:
+    paths :
+      -'todo-server/**'
+  pull-request:
+    paths:
+      - 'todo-server/**'
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      -name: Checkout Repository
+      uses: actions/checkout@v3
+
+      -nmae: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: latest
+        cache: 'npm'
+
+      -name: Install Dependencies
+      run: |
+        cd Todo-server
+        npm install
+
+      -name: Run Tests
+      run: |
+        cd Todo-server
+        npm test
