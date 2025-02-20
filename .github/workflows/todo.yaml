@@ -3,10 +3,10 @@ name: Todos
 on: 
   push:
     paths :
-      -'todo-server/**'
+      -'Todo-server/**'
   pull-request:
     paths:
-      - 'todo-server/**'
+      - 'Todo-server/**'
 
 jobs:
   build-and-test:
