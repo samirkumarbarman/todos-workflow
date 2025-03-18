@@ -38,7 +38,7 @@ export const createTodos = async (req, res) => {
     }
 };
 
-//Ipdate todos
+//Update todos
 export const updateTodos = async (req, res) => {
     try {
         const { id } = req.params;  

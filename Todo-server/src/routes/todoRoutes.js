@@ -3,9 +3,9 @@ import { getTodos, getTodoById, createTodos, updateTodos, deleteTodos } from "..
 
 const router = express.Router();
 
+router.post('/', createTodos);
 router.get('/', getTodos);
 router.get('/:id', getTodoById);
-router.post('/', createTodos);
 router.put('/:id', updateTodos);
 router.delete('/:id', deleteTodos);
 
