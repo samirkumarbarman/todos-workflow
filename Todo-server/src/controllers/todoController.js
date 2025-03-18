@@ -30,8 +30,8 @@ export const createTodos = async (req, res) => {
     try {
         const { title, description } = req.body;
         const todo = new Todo({title, description});
-        new todo.save();
-        res.staus(200).json(todo);
+        await todo.save();
+        res.status(200).json(todo);
     } catch (error) {
         console.error("Server error");
         res.status(500).json({message:"Server error"});

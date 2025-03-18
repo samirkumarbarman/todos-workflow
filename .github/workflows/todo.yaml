@@ -2,12 +2,11 @@ name: Todos
 
 on: 
   push:
-    paths :
-      -'Todo-server/**'
-  pull-request:
-    paths:
-      - 'Todo-server/**'
-
+    braanches:
+      - main
+  pull_request:
+    branches:
+      -main
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
@@ -19,7 +18,7 @@ jobs:
       -nmae: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: latest
+        node-version: '14'
         cache: 'npm'
 
       -name: Install Dependencies
